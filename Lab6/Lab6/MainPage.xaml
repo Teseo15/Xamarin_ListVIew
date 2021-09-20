@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab6.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <Button x:Name="ButtonSource" Text="ListviewSource"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout>
+                <Button x:Name="ButtonDemo" Text="ListViewDemo"/>
+                <Button x:Name="ButtonCode" Text="ListViewCode"/>
+            </StackLayout>
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
