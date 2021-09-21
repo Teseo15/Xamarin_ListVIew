@@ -12,8 +12,9 @@
                 <Button x:Name="ButtonDemo" Text="ListViewDemo"/>
                 <Button x:Name="ButtonCode" Text="ListViewCode"/>
             </StackLayout>
-
+        
         </StackLayout>
+        <Button x:Name="ButtonGroup" Text="ListViewGroup"/>
     </StackLayout>
 
 </ContentPage>

@@ -29,6 +29,10 @@ namespace Lab6
                 await Navigation.PushAsync(new ListViewSource());
             };
 
+            ButtonGroup.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new ListViewGroup());
+            };
 
 
         }

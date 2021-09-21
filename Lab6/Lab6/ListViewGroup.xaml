@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab6.ListViewGroup">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding ObraLista}"  HasUnevenRows="true" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Heading}"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell  Height="170">
+                            <StackLayout Orientation="Horizontal" >
+                                <Image Source="{Binding portada}" Aspect="AspectFill"  WidthRequest="100"
+                                   HeightRequest="160"  Margin="5"/>
+                                <StackLayout Padding="5" Orientation="Vertical">
+                                    <Label Text="{Binding titulo}" FontSize="16" TextColor="#4A00E0" />
+                                    <Label Text="{Binding author}" FontSize="14" TextColor="#859398" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
