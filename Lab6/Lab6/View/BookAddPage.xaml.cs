@@ -26,12 +26,6 @@ namespace Lab6.View
 			await Navigation.PopAsync();
 		}
 
-		async void OnDeleteButtonClicked(object sender, EventArgs e)
-		{
-			var book = (Book)BindingContext;
-			await App.bookManager.DeleteTaskAsync(book);
-			await Navigation.PopAsync();
-		}
 
 		async void OnCancelButtonClicked(object sender, EventArgs e)
 		{

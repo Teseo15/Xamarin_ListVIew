@@ -43,6 +43,17 @@ namespace Lab6.View
                 BindingContext = e.SelectedItem as Book
             });
         }
+        async void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            string id= mi.CommandParameter.ToString();
+            //var book = (Book)BindingContext;
+            await App.bookManager.DeleteTaskAsync(id);
+            DisplayAlert("Eliminado", "el elemento ha sido eliminado", "OK");
+            await Navigation.PopAsync();
+        }
+
+
     }
 
 

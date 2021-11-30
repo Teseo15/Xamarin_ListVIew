@@ -25,9 +25,9 @@ namespace Lab6.Data
 			return restService.SaveBookItemAsync(item, isNewItem);
 		}
 
-		public Task DeleteTaskAsync(Book item)
+		public Task DeleteTaskAsync(string id)
 		{
-			return restService.DeleteBookAsync(item._id);
+			return restService.DeleteBookAsync(id);
 		}
 	}
 }

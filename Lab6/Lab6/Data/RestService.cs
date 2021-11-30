@@ -26,7 +26,7 @@ namespace Lab6.Data
         }
         public async Task DeleteBookAsync(string id)
         {
-            var uri = new Uri(string.Format(Constants.RestUrl, id));
+            var uri = new Uri(string.Format(Constants.RestUrl+"/"+id,"DELETE"));
 
             try
             {

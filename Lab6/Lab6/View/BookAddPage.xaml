@@ -13,8 +13,6 @@
         <Switch IsToggled="{Binding Path=Done}" />
         <Button Text="Save" 
                 Clicked="OnSaveButtonClicked" />
-        <Button Text="Delete"
-                Clicked="OnDeleteButtonClicked" />
         <Button Text="Cancel" 
                 Clicked="OnCancelButtonClicked" />
     </StackLayout>

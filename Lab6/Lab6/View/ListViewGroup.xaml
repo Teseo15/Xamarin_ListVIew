@@ -17,11 +17,21 @@
             
             <ListView x:Name="listView"
                       HasUnevenRows="true" 
-                       ItemSelected="OnItemSelected"
+                       
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell  Height="170">
+                            <ViewCell.ContextActions>
+                                <MenuItem 
+                                      CommandParameter="{Binding _id}"
+                                     Text="Editar" />
+                                <MenuItem 
+                                    Clicked="OnDeleteButtonClicked"
+                                    CommandParameter="{Binding _id}"
+                                    Text="Eliminar"
+                                    IsDestructive="True"/>
+                            </ViewCell.ContextActions>
                             <StackLayout Orientation="Horizontal" >
                                 <Image Source="{Binding imagen}" Aspect="AspectFill"  WidthRequest="100"
                                    HeightRequest="160"  Margin="5"/>
