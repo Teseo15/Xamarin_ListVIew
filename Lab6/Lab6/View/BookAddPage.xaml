@@ -3,17 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lab6.View.BookAddPage">
     <StackLayout Margin="20">
-        <Label Text="Name" />
+        <Label Text="Titulo" />
         <Entry Text="{Binding Path=titulo}" 
-               Placeholder="Enter item" />
-        <Label Text="Notes" />
+               Placeholder="ingrese el titulo" />
+        <Label Text="Author" />
         <Entry Text="{Binding Path=author}"
-               Placeholder="Enter notes" />
-        <Label Text="Done" />
-        <Switch IsToggled="{Binding Path=Done}" />
-        <Button Text="Save" 
+               Placeholder="Ingrese el author" />
+        <Label Text="Precio" />
+        <Entry Text="{Binding Path=precio}"
+               Placeholder="Ingrese el precio" 
+               Keyboard="Numeric"/>
+        <Label Text="Fecha" />
+        <DatePicker 
+            MinimumDate="01/01/2018"
+            MaximumDate="12/31/2025"
+            Format="D"
+                      Date='{Binding fecha}'/>
+        <Label Text="Publicado" />
+        <Switch IsToggled="{Binding Path=disponible}"/>
+        <Button Text="Registrar" 
                 Clicked="OnSaveButtonClicked" />
-        <Button Text="Cancel" 
+        <Button Text="Cancelar" 
                 Clicked="OnCancelButtonClicked" />
+        
     </StackLayout>
 </ContentPage>

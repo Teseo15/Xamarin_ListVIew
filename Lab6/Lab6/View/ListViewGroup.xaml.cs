@@ -36,26 +36,26 @@ namespace Lab6.View
             });
         }
 
+        async void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            string id = mi.CommandParameter.ToString();
+            //var book = (Book)BindingContext;
+            await App.bookManager.DeleteTaskAsync(id);
+
+            //DisplayAlert("Eliminado", "el elemento ha sido eliminado", "OK");
+            listView.ItemsSource = await App.bookManager.GetTasksAsync();
+            await Navigation.PopAsync();
+        }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushAsync(new BookAddPage
             {
                 BindingContext = e.SelectedItem as Book
             });
-        }
-        async void OnDeleteButtonClicked(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender);
-            string id= mi.CommandParameter.ToString();
-            //var book = (Book)BindingContext;
-            await App.bookManager.DeleteTaskAsync(id);
-            DisplayAlert("Eliminado", "el elemento ha sido eliminado", "OK");
-            await Navigation.PopAsync();
-        }
 
-
+        }
     }
-
 
 }
 

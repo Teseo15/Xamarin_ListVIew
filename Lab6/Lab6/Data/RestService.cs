@@ -83,7 +83,7 @@ namespace Lab6.Data
                 }
                 else
                 {
-                    var uri = new Uri(string.Format(Constants.RestUrl, "Edit"));
+                    var uri = new Uri(string.Format(Constants.RestUrl+"/"+item._id, "Edit"));
                     response = await client.PutAsync(uri, content);
                 }
 
@@ -99,5 +99,31 @@ namespace Lab6.Data
             }
         }
 
+        public async Task UpdateBookItemAsync(Book item, string id)
+        {
+            try
+            {
+                //Response es un objeto.
+                //Serializar
+                var json = JsonConvert.SerializeObject(item);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = null;
+
+                var uri = new Uri(string.Format(Constants.RestUrl + "/" + id, "PUT"));
+                response = await client.PutAsync(uri, content);
+                
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\Book successfully Actualizado.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+        }
     }
 }

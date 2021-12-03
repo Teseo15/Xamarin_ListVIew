@@ -21,8 +21,11 @@ namespace Lab6.View
 		}
 		async void OnSaveButtonClicked(object sender, EventArgs e)
 		{
+
 			var todoItem = (Book)BindingContext;
-			await App.bookManager.SaveTaskAsync(todoItem, isNewItem);
+			Console.WriteLine("porque:");
+			Console.WriteLine(todoItem.fecha);
+			await App.bookManager.SaveTaskAsync(todoItem,isNewItem);
 			await Navigation.PopAsync();
 		}
 

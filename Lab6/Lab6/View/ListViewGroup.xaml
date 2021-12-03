@@ -17,13 +17,14 @@
             
             <ListView x:Name="listView"
                       HasUnevenRows="true" 
-                       
+                        ItemSelected="OnItemSelected"
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell  Height="170">
                             <ViewCell.ContextActions>
                                 <MenuItem 
+                                   
                                       CommandParameter="{Binding _id}"
                                      Text="Editar" />
                                 <MenuItem 
@@ -38,6 +39,10 @@
                                 <StackLayout Padding="5" Orientation="Vertical">
                                     <Label Text="{Binding titulo}" FontSize="16" TextColor="#4A00E0" />
                                     <Label Text="{Binding author}" FontSize="14" TextColor="#859398" />
+                                    <Label Text="{Binding precio}" FontSize="13" TextColor="#859398" />
+                                    <Label Text="{Binding disponible}" FontSize="13" TextColor="#859398" />
+                                    <Label Text="{Binding fecha}" FontSize="13" TextColor="#859398" />
+
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

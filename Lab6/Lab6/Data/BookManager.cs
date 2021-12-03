@@ -20,7 +20,7 @@ namespace Lab6.Data
 			return restService.RefresDataAsync();
 		}
 
-		public Task SaveTaskAsync(Book item, bool isNewItem = false)
+		public Task SaveTaskAsync(  Book item, bool isNewItem = false)
 		{
 			return restService.SaveBookItemAsync(item, isNewItem);
 		}
